@@ -2387,6 +2387,7 @@ def main():
                         help="print program version")
 
     args = parser.parse_args()
+    print(args)
 
     Extractor.keepLinks = args.links
     Extractor.keepSections = args.sections
@@ -2406,7 +2407,7 @@ def main():
         return
 
     if args.namespaces:
-        acceptedNamespaces = set(args.ns.split(','))
+        acceptedNamespaces = set(args.namespaces.split(','))
 
     FORMAT = '%(levelname)s: %(message)s'
     logging.basicConfig(format=FORMAT)
